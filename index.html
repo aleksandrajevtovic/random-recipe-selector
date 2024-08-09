@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Recipe Selector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Was Kochen Wir Heute?</h1>
+      <div id="view1" class="view">
+        <div class="filter-group">
+          <label>Aufwand</label>
+          <div class="filter" data-filter="effort">
+            <button class="filter-option active" data-value="egal">Egal</button>
+            <button class="filter-option" data-value="low">Gering</button>
+            <button class="filter-option" data-value="high">Hoch</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Preis</label>
+          <div class="filter" data-filter="cost">
+            <button class="filter-option active" data-value="egal">Egal</button>
+            <button class="filter-option" data-value="low">Gering</button>
+            <button class="filter-option" data-value="high">Hoch</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Vegetarisch</label>
+          <div class="filter" data-filter="veggie">
+            <button class="filter-option active" data-value="egal">Egal</button>
+            <button class="filter-option" data-value="true">Ja</button>
+            <button class="filter-option" data-value="false">Nein</button>
+          </div>
+        </div>
+        <div class="actions right-align">
+          <button id="resetBtn" class="button-outline">Reset</button>
+          <button id="nextBtn" class="button-primary">Weiter</button>
+        </div>
+      </div>
+
+      <div id="view2" class="view hidden">
+        <h3 id="recipe-name">Rezeptname</h3>
+        <div class="recipe-details">
+          <div class="col">
+            <div id="recipe-image-container">
+              <img id="recipe-image" src="" alt="Bild" />
+            </div>
+          </div>
+          <div class="col">
+            <p class="mt-1">
+              <strong>Aufwand:</strong> <span id="recipe-effort"></span>
+            </p>
+            <p><strong>Kosten:</strong> <span id="recipe-cost"></span></p>
+            <p>
+              <strong>Vegetarisch:</strong> <span id="recipe-veggie"></span>
+            </p>
+            <p class="font-bold">Einkaufsliste</p>
+            <ul id="ingredients-list"></ul>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="backBtn" class="button-outline">Zurück</button>
+          <button id="randomizeBtn" class="button-primary">Randomize</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
